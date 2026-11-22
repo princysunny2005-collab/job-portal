@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .categories {
+        padding: 45px 25px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+    }
+
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .category-card {
+        background: #f8fafc;
+        padding: 30px 15px;
+        border-radius: 10px;
+        border: 1px solid #e2e8f0;
+    }
+
+    .category-card h3 {
+        color: #2563eb;
+    }
+
+    .category-card p {
+        color: #475569;
+    }
+</style>
+
+<section class="categories">
+    <h1>Explore Job Categories</h1>
+    <p>Choose your preferred career field.</p>
+
+    <div class="category-grid">
+        <div class="category-card">
+            <h3>IT & Software</h3>
+            <p>Software Developer, Web Developer</p>
+        </div>
+
+        <div class="category-card">
+            <h3>Data Science</h3>
+            <p>Data Analyst, Data Scientist</p>
+        </div>
+
+        <div class="category-card">
+            <h3>Design</h3>
+            <p>UI Designer, Graphic Designer</p>
+        </div>
+
+        <div class="category-card">
+            <h3>Marketing</h3>
+            <p>Digital Marketing, SEO Executive</p>
+        </div>
+
+        <div class="category-card">
+            <h3>Finance</h3>
+            <p>Accountant, Financial Analyst</p>
+        </div>
+
+        <div class="category-card">
+            <h3>Human Resources</h3>
+            <p>HR Executive, Recruiter</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

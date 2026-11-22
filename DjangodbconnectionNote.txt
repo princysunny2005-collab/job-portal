@@ -1,0 +1,16 @@
+Basic Settings
+
+setting Django up to use MySQL
+
+Navigate to the setings.py file and replace the current BATABASE lines with the following .We will configure  your database dictionary so that it knows to use MySQL as your database backend and form what file to read your database connection credentials:
+
+
+settings.py
+
+		DATABASE ={
+		'default':{
+		'ENGINE':'django.db.beckends.mysql',
+		'NAME' :'DB-NAME',
+		'USER':'DB_USER',
+		'PASSWORD':'DB_PASSWORD',
+		'HOST':'localhost',# Or an IP address that your DB is hosted on 'PORT':'3306',}}

@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .find-jobs {
+        padding: 45px 25px;
+        max-width: 1000px;
+        margin: auto;
+        font-family: Arial, sans-serif;
+    }
+
+    .find-jobs h1 {
+        text-align: center;
+        color: #1e40af;
+    }
+
+    .search-box {
+        display: flex;
+        gap: 10px;
+        margin: 30px 0;
+    }
+
+    .search-box input {
+        flex: 1;
+        min-width: 0;
+        padding: 13px;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+    }
+
+    .search-box button {
+        background: #2563eb;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    .job-card {
+        padding: 22px;
+        margin-bottom: 18px;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+    }
+
+    .job-card h3 {
+        color: #2563eb;
+    }
+
+    .job-card p {
+        color: #475569;
+    }
+
+    @media (max-width: 500px) {
+        .search-box {
+            flex-direction: column;
+        }
+    }
+</style>
+
+<section class="find-jobs">
+    <h1>Find Your Next Job</h1>
+    <p style="text-align:center;">
+        Explore career opportunities that match your skills.
+    </p>
+
+    <form class="search-box" onsubmit="return searchJobs()">
+        <input type="text" id="jobSearch"
+               placeholder="Search job title or company">
+
+        <button type="submit">Search Jobs</button>
+    </form>
+
+    <div id="jobList">
+        <div class="job-card">
+            <h3>Python Developer</h3>
+            <p>Company: ABC Technologies</p>
+            <p>Location: Kochi, Kerala</p>
+            <p>Type: Full-time</p>
+        </div>
+
+        <div class="job-card">
+            <h3>Data Analyst</h3>
+            <p>Company: Data Solutions</p>
+            <p>Location: Thiruvananthapuram, Kerala</p>
+            <p>Type: Full-time</p>
+        </div>
+
+        <div class="job-card">
+            <h3>Web Developer</h3>
+            <p>Company: Creative Web Solutions</p>
+            <p>Location: Bengaluru, India</p>
+            <p>Type: Internship</p>
+        </div>
+    </div>
+</section>
+
+<script>
+    function searchJobs() {
+        const query = document.getElementById("jobSearch")
+            .value.toLowerCase().trim();
+
+        const jobs = document.querySelectorAll(".job-card");
+
+        jobs.forEach(function(job) {
+            job.style.display = job.innerText
+                .toLowerCase().includes(query) ? "block" : "none";
+        });
+
+        return false;
+    }
+</script>
+{% endblock %}

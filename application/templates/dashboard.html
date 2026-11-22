@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #263238;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+th {
+    background-color: #263b5e;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 15px;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+    font-size: 14px;
+}
+
+tr:hover {
+    background-color: #eef4ff;
+}
+
+td img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+td a {
+    display: inline-block;
+    background-color: #2878d0;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+td a:hover {
+    background-color: #174d91;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+    </style>
+</head>
+<body>
+    <a href="{% url 'logout' %}">Logout</a>
+    <h1>Admin Dashboard</h1>
+    <h1>{{ request.session.username }}</h1>
+    <h1>{{ request.session.fullname }}</h1>
+    <h1>{{ request.session.email }}</h1>
+
+    <h3>{{ request.COOKIES.username }}</h3>
+    <h3>{{ request.COOKIES.fullname }}</h3>
+
+    <a href="{% url 'profile' %}">Profile</a>
+    <table>
+        
+        <tr>
+            <th>profilepic</th>
+            <th>fullname</th>
+            <th>email</th>
+            <th>number</th>
+            <th>cv</th>
+            <th>Update</th>
+        </tr>
+        {% if data  %}
+        {% for i in data %}
+        <tr>
+            
+            <td>
+                {% if i.profilepic %}
+                    <img src="{{ i.profilepic.url }}" alt="Profile" width="50">
+                {% else %}
+                    No Image
+                {% endif %}
+            </td>
+            <td>{{ i.fullname }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.number }}</td>
+            <td>{% if i.cv %}
+                    <img src="{{ i.cv.url }}" alt="Profile" width="50">
+                {% else %}
+                    No Image
+                {% endif %}
+            </td>
+            <td><a href="{% url 'update' i.id %}">Update</a></td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </table>
+    
+</body>
+</html>

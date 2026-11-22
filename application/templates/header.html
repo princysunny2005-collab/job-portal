@@ -1,0 +1,107 @@
+{% load static %}
+
+<style>
+    .job-header {
+        background-color: #ffffff;
+        padding: 18px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        font-family: Arial, sans-serif;
+    }
+
+    .job-logo {
+        font-size: 27px;
+        font-weight: bold;
+        color: #2563eb;
+        text-decoration: none;
+    }
+
+    .job-logo span {
+        color: #111827;
+    }
+
+    .job-nav {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .job-nav a {
+        text-decoration: none;
+        color: #374151;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .job-nav a:hover {
+        color: #2563eb;
+    }
+
+    .job-buttons {
+        display: flex;
+        gap: 12px;
+    }
+
+    .login-btn {
+        border: 1px solid #2563eb;
+        color: #2563eb;
+        background: white;
+        padding: 10px 18px;
+        border-radius: 6px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .register-btn {
+        background: #2563eb;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 6px;
+        text-decoration: none;
+    }
+
+    .register-btn:hover {
+        background: #1d4ed8;
+    }
+
+    @media (max-width: 750px) {
+        .job-header {
+            padding: 15px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .job-nav {
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .job-buttons {
+            flex-wrap: wrap;
+        }
+    }
+</style>
+
+<header class="job-header">
+
+    <a href="/" class="job-logo">
+        Job<span>Connect</span>
+    </a>
+
+    <nav class="job-nav">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'find' %}">Find Jobs</a>
+        <a href="{% url 'category' %}">Companies</a>
+        <a href="{% url 'career' %}">Career Advice</a>
+
+    </nav>
+
+    <div class="job-buttons">
+        <a href="#" class="login-btn">Login</a>
+        <a href="{% url 'register' %}" class="register-btn">Register</a>
+        <a href="{% url 'dashboard' %}" class="register-btn">Dashboard</a>
+    </div>
+
+</header>

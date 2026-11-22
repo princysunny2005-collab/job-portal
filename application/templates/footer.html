@@ -1,0 +1,142 @@
+<style>
+    .job-footer {
+        background: #111827;
+        color: #d1d5db;
+        padding: 40px 50px 15px;
+        font-family: Arial, sans-serif;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+        gap: 30px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .footer-logo {
+        font-size: 26px;
+        font-weight: bold;
+        color: #60a5fa;
+        margin-bottom: 15px;
+    }
+
+    .footer-logo span {
+        color: white;
+    }
+
+    .footer-about {
+        font-size: 14px;
+        line-height: 1.8;
+        max-width: 300px;
+    }
+
+    .job-footer h3 {
+        color: white;
+        font-size: 17px;
+        margin-bottom: 18px;
+    }
+
+    .job-footer ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .job-footer ul li {
+        margin-bottom: 12px;
+    }
+
+    .job-footer a {
+        color: #d1d5db;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .job-footer a:hover {
+        color: #60a5fa;
+    }
+
+    .footer-contact p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid #374151;
+        text-align: center;
+        margin-top: 35px;
+        padding-top: 18px;
+        font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+        .footer-container {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .job-footer {
+            padding: 30px 20px 15px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .footer-container {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<footer class="job-footer">
+
+    <div class="footer-container">
+
+        <div>
+            <div class="footer-logo">
+                Job<span>Connect</span>
+            </div>
+
+            <p class="footer-about">
+                Find your dream job and build your career
+                with JobConnect. Explore opportunities,
+                connect with companies and take the next
+                step towards your future.
+            </p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Find Jobs</a></li>
+                <li><a href="#">Companies</a></li>
+                <li><a href="#">Career Advice</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>For Job Seekers</h3>
+            <ul>
+                <li><a href="#">Create Account</a></li>
+                <li><a href="#">Upload Resume</a></li>
+                <li><a href="#">Browse Jobs</a></li>
+                <li><a href="#">Career Tips</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>Email: support@jobconnect.com</p>
+            <p>Phone: +91 98765 43210</p>
+            <p>Location: Kerala, India</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>
+            &copy; 2026 JobConnect. All Rights Reserved.
+        </p>
+    </div>
+
+</footer>

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .career-page {
+        max-width: 1000px;
+        margin: auto;
+        padding: 45px 25px;
+        font-family: Arial, sans-serif;
+    }
+
+    .career-heading {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    .career-heading h1 {
+        color: #1d4ed8;
+    }
+
+    .advice-card {
+        background: #f8fafc;
+        padding: 25px;
+        margin-bottom: 20px;
+        border-left: 5px solid #2563eb;
+        border-radius: 8px;
+    }
+
+    .advice-card h3 {
+        color: #1e40af;
+    }
+
+    .advice-card p {
+        color: #475569;
+        line-height: 1.7;
+    }
+</style>
+
+<section class="career-page">
+
+    <div class="career-heading">
+        <h1>Career Advice</h1>
+        <p>Tips to help you prepare for your dream career.</p>
+    </div>
+
+    <div class="advice-card">
+        <h3>1. Build a Professional Resume</h3>
+        <p>
+            Highlight your education, technical skills,
+            projects and certifications. Keep your resume
+            clear, professional and relevant to the job.
+        </p>
+    </div>
+
+    <div class="advice-card">
+        <h3>2. Improve Your Technical Skills</h3>
+        <p>
+            Practise Python, SQL, HTML, CSS and other skills
+            relevant to your chosen career. Build projects
+            to demonstrate your knowledge.
+        </p>
+    </div>
+
+    <div class="advice-card">
+        <h3>3. Prepare for Interviews</h3>
+        <p>
+            Practise common interview questions, explain
+            your projects clearly and improve your
+            communication skills.
+        </p>
+    </div>
+
+    <div class="advice-card">
+        <h3>4. Create a Strong Portfolio</h3>
+        <p>
+            Add your projects to GitHub and keep your
+            professional profiles updated to showcase
+            your work to recruiters.
+        </p>
+    </div>
+
+    <div class="advice-card">
+        <h3>5. Apply Consistently</h3>
+        <p>
+            Search for relevant openings, customise your
+            resume for each role and track your applications.
+        </p>
+    </div>
+
+</section>
+{% endblock %}
